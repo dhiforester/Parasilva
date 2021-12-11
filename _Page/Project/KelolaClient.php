@@ -52,7 +52,7 @@
                                                     echo '<tr>';
                                                     echo '  <td>';
                                                     echo '      <b class="text-info">';
-                                                    echo '          <a href="index.php?page=project&subpage=DetailClientt&id='.$id_akses.'" class="text-info"><i class="fa fa-external-link" aria-hidden="true"></i> '.$nama.'</a><br>';
+                                                    echo '          <a href="index.php?page=project&subpage=DetailClient&id='.$id_akses.'" class="text-info"><i class="fa fa-external-link" aria-hidden="true"></i> '.$nama.'</a><br>';
                                                     echo '      </b>';
                                                     echo '      <small><i class="fa fa-mail-reply" aria-hidden="true"></i> '.$email.'</small> <br>';
                                                     echo '      <small><i class="fa fa-phone" aria-hidden="true"></i> '.$kontak.'</small> <br>';

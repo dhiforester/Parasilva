@@ -16,7 +16,19 @@
                 if($subpage=="KelolaClient"){
                     include "_Page/Project/KelolaClient.php";
                 }else{
-                    include "_Page/Project/DetailProject.php";
+                    if($subpage=="TambahClient"){
+                        include "_Page/Project/TambahClient.php";
+                    }else{
+                        if($subpage=="DetailClient"){
+                            include "_Page/Project/DetailClient.php";
+                        }else{
+                            if($subpage=="AddProject"){
+                                include "_Page/Project/AddProject.php";
+                            }else{
+                                include "_Page/Project/DetailProject.php";
+                            }
+                        }
+                    }
                 }
             }
         }

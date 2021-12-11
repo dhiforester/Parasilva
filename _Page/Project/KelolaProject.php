@@ -22,13 +22,11 @@
                         <div class="blog-content">
                             <div class="title-blog">
                                 <div class="row">
-                                    <div class="col-md-4 mt-4 mb-4">
-                                        <a href="index.php?page=project&subpage=TambahProject" class="btn btn-md btn-primary btn-block">
+                                    <div class="col-md-12 mt-12 mb-12">
+                                        <a href="index.php?page=project&subpage=AddProject" class="btn btn-md btn-primary mt-2 mr-2 mb-4">
                                             <i class="fa fa-plus"></i> Tambah Project
                                         </a>
-                                    </div>
-                                    <div class="col-md-4 mt-4 mb-4">
-                                        <a href="_Page/Logout/Logout.php" class="btn btn-md btn-dark btn-block">
+                                        <a href="_Page/Logout/Logout.php" class="btn btn-md btn-dark mt-2 mr-2 mb-4">
                                             <i class="fa fa-sign-out"></i> Logout Project
                                         </a>
                                     </div>
