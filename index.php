@@ -3,6 +3,12 @@
     include "_Config/Connection.php";
     include "_Config/Session.php";
     include "_Config/setting_info.php";
+    //menangkap Halaman
+    if(empty($_GET['page'])){
+        $Page="";
+    }else{
+        $Page=$_GET['page'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,9 +86,9 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.php">Beranda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?page=tentang">Tentang</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?page=lokasi">Kontak & Lokasi</a></li>
+                        <li class="nav-item <?php if(empty($Page)||$Page=="Beranda"){echo "active";} ?>"><a class="nav-link" href="index.php">Beranda</a></li>
+                        <li class="nav-item <?php if($Page=="tentang"){echo "active";} ?>"><a class="nav-link" href="index.php?page=tentang">Tentang Kami</a></li>
+                        <li class="nav-item <?php if($Page=="lokasi"){echo "active";} ?>"><a class="nav-link" href="index.php?page=lokasi">Kontak & Lokasi</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -128,40 +134,26 @@
         <!-- End Navigation -->
     </header>
     <?php
-        if(empty($_GET['page'])){
-            include "Home.php";
-        }else{
-            $Page=$_GET['page'];
-            if($Page=="tentang"){
-                include "Tentang.php";
-            }
-            if($Page=="lokasi"){
-                include "Lokasi.php";
-            }
-            if($Page=="produk"){
-                include "Produk.php";
-            }
-        }
-
+        include "_Partial/RoutingPage.php";
     ?>
     <footer>
         <div class="footer-main">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                        <a href="index.php">
-                            <img src="Assets/images/facebook.png" width="60px">
-                        </a>
-                        <a href="index.php">
-                            <img src="Assets/images/instagram.png" width="60px">
-                        </a>
-                        <a href="https://web.whatsapp.com/">
-                            <img src="Assets/images/whatsapp.png" width="60px">
-                        </a>
-                        <a href="https://www.tokopedia.com/fifarastore">
-                            <img src="Assets/images/tokopedia.png" width="60px">
-                        </a>
-                        
+                        <?php
+                            //Panggil data medsos
+                            $query = mysqli_query($Conn, "SELECT*FROM setting_medsos ORDER BY id_setting_medsos DESC");
+                            while ($data = mysqli_fetch_array($query)) {
+                                $id_setting_medsos= $data['id_setting_medsos'];
+                                $nama_medsos= $data['nama_medsos'];
+                                $url_medsos= $data['url_medsos'];
+                                $icon_medsos= $data['icon_medsos'];
+                                echo '<a href="'.$url_medsos.'" alt="'.$nama_medsos.'">';
+                                echo '  <img src="Assets/images/'.$icon_medsos.'" width="60px">';
+                                echo '</a>';
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -171,12 +163,12 @@
 
     <!-- Start copyright  -->
     <div class="footer-copyright">
-        <p class="footer-company">All Rights Reserved. &copy; 2020 <a href="#">Dapur Fifara</a> Design By :
-            <a href="">Solihul Hadi</a></p>
+        <p class="footer-company">All Rights Reserved. &copy; 2020 <a href="index.php">Parasilva Technology</a> Design By :
+            <a href="index.php">Solihul Hadi</a></p>
     </div>
     <!-- End copyright  -->
 
-    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    <!-- <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a> -->
 
     <!-- ALL JS FILES -->
     <script src="Assets/js/jquery-3.2.1.min.js"></script>
