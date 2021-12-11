@@ -76,6 +76,7 @@
                                         echo '<a href="index.php?page=project&subpage=EditProject&id='.$idProject.'" class="btn btn-sm btn-info mt-2 mr-2"><i class="fa fa-pencil"></i> Edit</a>';
                                         echo '<a href="index.php?page=project&subpage=DeleteProject&id='.$idProject.'" class="btn btn-sm btn-danger mt-2 mr-2"><i class="fa fa-trash"></i> Delete</a>';
                                     }
+                                    echo '<a href="index.php?page=project" class="btn btn-sm btn-dark mt-2 mr-2"><i class="fa fa-home"></i> Home</a>';
                                 ?>
                             </div>
                         </div>
