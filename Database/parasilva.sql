@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 11, 2021 at 06:24 PM
+-- Generation Time: Dec 12, 2021 at 04:31 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.1.33
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `akses` (
   `password` varchar(25) NOT NULL,
   `akses` varchar(25) NOT NULL,
   PRIMARY KEY (`id_akses`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `akses`
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `akses` (
 INSERT INTO `akses` (`id_akses`, `nama`, `email`, `kontak`, `password`, `akses`) VALUES
 (1, 'Solihul Hadi', 'dhiforester@gmail.com', '089601154726', 'solihulhadi1412', 'Admin'),
 (2, 'aditya Amindespranadi', 'klinikutamasamara@gmail.com', '+62 813-1376-6281', 'klinikutamasamara', 'Client'),
-(3, 'Lili Hamduli', 'hamdulih71@gmail.com', '+62 821-2835-8771', 'hamdulih71', 'Client');
+(3, 'Lili Hamduli', 'hamdulih71@gmail.com', '+6282128358771', 'hamdulih71', 'Client');
 
 -- --------------------------------------------------------
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `project` (
   `url_demo` varchar(100) DEFAULT NULL,
   `deskripsi` text NOT NULL,
   PRIMARY KEY (`id_project`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `project`
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `project` (
 
 INSERT INTO `project` (`id_project`, `id_akses`, `tanggal`, `name_project`, `url_demo`, `deskripsi`) VALUES
 (1, 2, '2021-12-11', 'Bridging Antrian Online', 'https://parasilva.tech/samara', 'Proses bridging antrian online klinik'),
-(2, 3, '2021-12-01', 'My Math E-Learning', 'mymath.tech', 'Membangun aplikasi e-learning berbasis mobile');
+(2, 3, '2021-12-01', 'My Math E-Learning', 'mymath.tech', 'Membangun aplikasi e-learning berbasis mobile dengan multi platform');
 
 -- --------------------------------------------------------
 
@@ -86,14 +86,16 @@ CREATE TABLE IF NOT EXISTS `project_progres` (
   `tanggal` varchar(20) NOT NULL,
   `deskripsi` text NOT NULL,
   PRIMARY KEY (`id_project_progres`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `project_progres`
 --
 
 INSERT INTO `project_progres` (`id_project_progres`, `id_project`, `id_akses`, `tanggal`, `deskripsi`) VALUES
-(1, 1, 1, '2021-12-11 22:31', 'Commit version control pertama kali');
+(1, 1, 1, '2021-12-11 22:31', 'Commit version control pertama kali'),
+(5, 1, 2, '2021-12-12', 'Membuat clean tamplate (web admin tamplate)'),
+(14, 2, 3, '2021-12-12 11:19', 'Commit Untuk pertama kali');
 
 -- --------------------------------------------------------
 
@@ -150,7 +152,15 @@ CREATE TABLE IF NOT EXISTS `setting_medsos` (
   `url_medsos` varchar(100) NOT NULL,
   `icon_medsos` varchar(50) NOT NULL,
   PRIMARY KEY (`id_setting_medsos`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `setting_medsos`
+--
+
+INSERT INTO `setting_medsos` (`id_setting_medsos`, `nama_medsos`, `url_medsos`, `icon_medsos`) VALUES
+(1, 'Instagram', 'https://www.instagram.com/dhiforester/', 'instagram.png'),
+(2, 'Facebook', 'https://www.facebook.com/hadi.solihul/', 'facebook.png');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
