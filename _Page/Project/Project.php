@@ -25,7 +25,19 @@
                             if($subpage=="AddProject"){
                                 include "_Page/Project/AddProject.php";
                             }else{
-                                include "_Page/Project/DetailProject.php";
+                                if($subpage=="EditClient"){
+                                    include "_Page/Project/EditClient.php";
+                                }else{
+                                    if($subpage=="AddRecord"){
+                                        include "_Page/Project/AddRecord.php";
+                                    }else{
+                                        if($subpage=="EditProject"){
+                                            include "_Page/Project/EditProject.php";
+                                        }else{
+                                            include "_Page/Project/DetailProject.php";
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

@@ -72,11 +72,12 @@
                             <div class="col-md-12">
                                 <?php
                                     if($SessionAkses=="Admin"){
-                                        echo '<a href="index.php?page=project&subpage=AddRecord&id='.$idProject.'" class="btn btn-sm btn-primary mt-2 mr-2"><i class="fa fa-plus"></i>Add Record</a>';
+                                        echo '<a href="index.php?page=project&subpage=AddRecord&idProject='.$idProject.'" class="btn btn-sm btn-primary mt-2 mr-2"><i class="fa fa-plus"></i>Add Record</a>';
                                         echo '<a href="index.php?page=project&subpage=EditProject&id='.$idProject.'" class="btn btn-sm btn-info mt-2 mr-2"><i class="fa fa-pencil"></i> Edit</a>';
-                                        echo '<a href="index.php?page=project&subpage=DeleteProject&id='.$idProject.'" class="btn btn-sm btn-danger mt-2 mr-2"><i class="fa fa-trash"></i> Delete</a>';
+                                        echo '<a href="_Page/Project/DeleteProject.php?id='.$idProject.'" class="btn btn-sm btn-danger mt-2 mr-2"><i class="fa fa-trash"></i> Delete</a>';
                                     }
                                     echo '<a href="index.php?page=project" class="btn btn-sm btn-dark mt-2 mr-2"><i class="fa fa-home"></i> Home</a>';
+                                    echo '<a href="_Page/Logout/Logout.php" class="btn btn-sm btn-dark mr-2 mt-2"><i class="fa fa-sign-out"></i> Logout</a>';
                                 ?>
                             </div>
                         </div>
@@ -111,14 +112,15 @@
                                             }else{
                                                 //Arraykan data progress
                                                 $no=1;
-                                                $query = mysqli_query($Conn, "SELECT*FROM project_progres WHERE id_project='$idProject' ORDER BY id_project_progres DESC");
+                                                $query = mysqli_query($Conn, "SELECT*FROM project_progres WHERE id_project='$idProject' ORDER BY tanggal DESC");
                                                 while ($data = mysqli_fetch_array($query)) {
+                                                    $id_project_progres= $data['id_project_progres'];
                                                     $id_project= $data['id_project'];
                                                     $tanggal= $data['tanggal'];
                                                     $deskripsi= $data['deskripsi'];
                                                     echo '<tr>';
                                                     echo '  <td class="text-center">'.$no.'</td>';
-                                                    echo '  <td class="text-left"><b>'.$deskripsi.'</b><br><small>Date/Time: '.$tanggal.'</small></td>';
+                                                    echo '  <td class="text-left"><b>'.$deskripsi.'</b><br><small>Date/Time: '.$tanggal.' <a href="_Page/Project/ProsesHapusRecord.php?id='.$id_project_progres.'" class="text-danger">X Hapus</a></small></td>';
                                                     echo '</tr>';
                                                 $no++;}
                                             }

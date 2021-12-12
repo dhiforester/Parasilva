@@ -64,7 +64,7 @@
                                 <a href="index.php?page=project&subpage=EditClient&id=<?php echo $id_akses;?>" class="btn btn-sm btn-info mt-2 mr-2">
                                     <i class="fa fa-pencil"></i> Edit
                                 </a>
-                                <a href="_Page/Project/DeleteClient.php?id=<?php echo $id_akses;?>" class="btn btn-sm btn-danger mt-2 mr-2">
+                                <a href="_Page/Project/ProsesDeleteClient.php?id=<?php echo $id_akses;?>" class="btn btn-sm btn-danger mt-2 mr-2">
                                     <i class="fa fa-trash"></i> Delete
                                 </a>
                                 <a href="index.php?page=project&subpage=KelolaClient" class="btn btn-sm btn-dark mt-2 mr-2">
