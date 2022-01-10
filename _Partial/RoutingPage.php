@@ -15,7 +15,19 @@
                     if($Page=="project"){
                         include "_Page/Project/Project.php";
                     }else{
-                        include "index.php";
+                        if($Page=="Konsultasi"){
+                            include "_Page/Konsultasi/Konsultasi.php";
+                        }else{
+                            if($Page=="Aplikasi"){
+                                include "_Page/Aplikasi/Aplikasi.php";
+                            }else{
+                                if($Page=="Produk"){
+                                    include "_Page/Produk/Produk.php";
+                                }else{
+                                    include "index.php";
+                                }
+                            }
+                        }
                     }
                 }
             }

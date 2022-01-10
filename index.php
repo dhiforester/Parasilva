@@ -37,6 +37,7 @@
     <!-- Custom CSS -->
     
     <link rel="stylesheet" href="Assets/fonts/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="Assets/fonts/themify-icons/themify-icons.css.css">
 </head>
 
 <body>

@@ -104,6 +104,7 @@
                                 Berdiskusi bersama tim, memecahkan permasalahan bisnis, berinovasi dan memberikan solusi 
                                 yang efektif.
                             </p>
+                            <a href="index.php?page=Konsultasi" class="text-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -120,6 +121,7 @@
                                 Anda mungkin mengalami kesulitan membuat aplikasi untuk berbagai keperluan hanya untuk 
                                 mengikuti perkembangan jaman. Kami siap menemani dan membantu perkembangan bisnis anda.
                             </p>
+                            <a href="index.php?page=Aplikasi" class="text-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -136,6 +138,7 @@
                                 Kami menerima jasa pembuatan berbagai aplikasi berbasis web dan mobile, pengembangan 
                                 infrastruktur jaringan, penyediaan berbagai perangkat dan jasa layanan konsultasi.
                             </p>
+                            <a href="index.php?page=Produk" class="text-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
