@@ -24,7 +24,11 @@
                                 if($Page=="Produk"){
                                     include "_Page/Produk/Produk.php";
                                 }else{
-                                    include "index.php";
+                                    if($Page=="Pembayaran"){
+                                        include "_Page/Pembayaran/Pembayaran.php";
+                                    }else{
+                                        include "index.php";
+                                    }
                                 }
                             }
                         }
